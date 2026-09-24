@@ -1,0 +1,51 @@
+{
+  "fonte": "Ghial, Saini & Saini (2014), IEEE Trans. Industrial Electronics 61(2):682-692, secao VI (estudo de caso, motor 1)",
+  "motor": {
+    "tipo": "PSC (capacitor permanente), ventilador",
+    "polos": 4,
+    "tensao_nominal_V": [220, 240],
+    "potencia_W": 70,
+    "frequencia_Hz": 50,
+    "rotacao_rpm": 1400
+  },
+  "ensaio_cc": {
+    "Rsm_ohm": 177.0785,
+    "Rsa_ohm": 177.0785,
+    "Rs_ohm": 88.5392
+  },
+  "ensaio_vazio": {
+    "V_V": 240,
+    "I_A": 0.238,
+    "P_W": 57
+  },
+  "ensaio_rotor_bloqueado": {
+    "V_V": 174.4,
+    "I_A": 0.3040,
+    "P_W": 51,
+    "RLR_ohm": 551.8525,
+    "XLR_ohm": 156.7559,
+    "ZLR_ohm": 573.6842
+  },
+  "escorregamento": {
+    "Sf": 0.0591,
+    "Sb": 1.9409
+  },
+  "capacitor": {
+    "C_uF": 2.63,
+    "Rc_ohm": 6.7,
+    "Xc_ohm": 1162.6,
+    "medido_com": "medidor LCR, capacitor isolado"
+  },
+  "medido_em_operacao": {
+    "V_V": 230,
+    "IL_A": 0.312,
+    "Pin_W": 70,
+    "pf": 1.00,
+    "instrumento": "Fluke 43B"
+  },
+  "observacoes": [
+    "Rsm e Rsa aparecem com o mesmo valor no artigo",
+    "Eq. (53) define IL como Re[Im + Ia], nao o modulo",
+    "pf = 1,00 medido"
+  ]
+}
