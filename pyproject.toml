@@ -2,8 +2,11 @@
 name = "gemeo-capacitor"
 version = "0.1.0"
 description = "Gêmeo digital que estima a capacitância do capacitor de um motor monofásico PSC a partir das correntes"
-requires-python = ">=3.10"
+requires-python = ">=3.9"
 dependencies = ["numpy", "scipy", "matplotlib"]
+
+[project.optional-dependencies]
+dev = ["pytest"]
 
 [build-system]
 requires = ["setuptools>=61"]
