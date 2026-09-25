@@ -48,8 +48,11 @@ Objetivo: testar se o resultado da etapa 1 vale para outro motor.
 | Critério de fim de vida do capacitor de filme: C/C0 < 95% | Zhao et al. 2021, Tabela I | ✔ |
 | Mecanismo de degradação (autocura) e modelo de vida em função de tensão e temperatura | Wang & Blaabjerg 2014 | ✔ |
 | Forma da curva de perda de capacitância no tempo | Li et al. 2024 (filme sob tensão CC + harmônicos) | ✔ parcial: é capacitor de alta tensão, não de motor |
-| Norma de capacitores para motores AC (classes de vida útil) | IEC 60252-1 | a pesquisar |
-| Datasheet de capacitor de motor (ex.: 2,5–3 µF, 400–450 V AC) com vida útil e tolerância | fabricantes | a pesquisar |
+| Classes de vida (A/B/C/D = 30.000/10.000/3.000/1.000 h), taxa de falha ≤ 3% e **definição de falha** (deriva de C 10% além da tolerância) | IEC 60252-1 ed. 2.1, seção 3 | ✔ |
+| Capacitor de motor real: ±5%, classe A 30.000 h a 420 VAC, tan δ = 0,002 (20 °C, 50 Hz), −25 a +85 °C, disponível em 2,5 e 3 µF / 450 V | KEMET C87 (datasheet F3063_C87) | ✔ |
+| Capacitor típico de ventilador (CBB61): ±5% ou ±10%, tan δ ≤ 0,003 (1 kHz); sem classe de vida | WEE Technology CBB61 | ✔ complementar |
+
+Dados estruturados em `dados/referencia/capacitor_kemet_c87.json`. Critério de alerta e falha: [ADR 0004](adr/0004-criterio-alerta-falha.md).
 
 ## 4. Sensores
 

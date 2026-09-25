@@ -17,8 +17,13 @@ Quando um ponto fraco do dielétrico sofre ruptura, a camada metálica em volta 
 
 | Tipo | Critério | Fonte |
 |---|---|---|
-| Filme metalizado (MPPF) | **C/C0 < 95%** | Zhao et al. 2021, Tabela I |
+| Capacitor de motor AC (norma) | Falha: deriva de C **10% além da tolerância** (±5% → cerca de −15%), curto, interrupção ou vazamento | IEC 60252-1, seção 3 |
+| Filme metalizado em conversor | C/C0 < 95% | Zhao et al. 2021, Tabela I |
 | Eletrolítico de alumínio | C/C0 < 80% ou ESR/ESR0 > 2 | Zhao et al. 2021, Tabela I |
+
+**Critério adotado pelo gêmeo ([ADR 0004](adr/0004-criterio-alerta-falha.md)):** alerta em **C/C0 ≤ 0,95**; falha em **C/C0 ≤ 0,85**. C0 é aprendido no comissionamento.
+
+Vida útil nominal por classe (IEC 60252-1): A = 30.000 h, B = 10.000 h, C = 3.000 h, D = 1.000 h, com taxa de falha ≤ 3% ao longo da vida. O capacitor de referência (KEMET C87) é classe A a 420 VAC.
 
 ## Modelo de vida útil
 
@@ -34,9 +39,7 @@ $$L = L_0 \left(\frac{V}{V_0}\right)^{-n} \exp\left[\frac{E_a}{k_B}\left(\frac{1
 
 | Cenário | C(t) | Uso |
 |---|---|---|
-| Degraus | C = 100%, 99%, 98%, 97%, 95%, 90% | Etapa 1: sensibilidade |
-| Linear | C cai a taxa constante até 95% | Etapa 2: rastreamento |
+| Degraus | C = 100%, 99%, 98%, 97%, 95%, 90%, 85% | Sprint 1: sensibilidade |
+| Linear | C cai a taxa constante até 85% | Sprint 2: rastreamento |
 | "Lenta → rápida" | Perda que acelera no fim da vida, como observado por Li et al. (2024) | Etapa 2: antecedência do alerta |
 | Com perturbações | Qualquer um dos anteriores + variação de carga, de tensão da rede e de temperatura | Etapa 2: robustez |
-
-**A pesquisar:** norma IEC 60252-1 (capacitores para motores AC) e datasheets de fabricantes, para vida útil nominal e tolerância de capacitância de capacitores de motor reais.

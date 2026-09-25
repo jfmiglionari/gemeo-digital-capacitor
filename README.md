@@ -4,7 +4,9 @@
 
 Motores monofásicos com capacitor permanente (PSC) estão em ventiladores, ar-condicionado e lavadoras. O capacitor é um dos componentes que mais falham nesses motores, e hoje a falha só é percebida quando o motor já não funciona direito. Este projeto investiga se é possível estimar a saúde do capacitor com o motor rodando, usando apenas sinais elétricos que qualquer sensor de corrente barato mede.
 
-**Status:** fase 1, simulação. Ver [roadmap](docs/roadmap.md).
+**Status:** Sprint 0 (fundamentos) concluída; Sprint 1 (modelo e sensibilidade) aberta. Ver [roadmap](docs/roadmap.md).
+
+**Critério:** alerta quando a capacitância cai 5%; falha em 15%, alinhado à norma IEC 60252-1 ([ADR 0004](docs/adr/0004-criterio-alerta-falha.md)).
 
 ## Por que isso não é óbvio
 
@@ -26,7 +28,8 @@ Este projeto junta as duas coisas: modelo do motor + estimação online da capac
 | [Modelo de falhas](docs/04-modelo-de-falhas.md) | Como o capacitor degrada e quando é considerado falho |
 | [Plano de validação](docs/05-plano-de-validacao.md) | Como sabemos que o gêmeo funciona |
 | [Decisões (ADRs)](docs/adr/) | Registro das decisões de arquitetura e por quê |
-| [Roadmap](docs/roadmap.md) | Etapas do projeto |
+| [Metodologia](docs/06-metodologia.md) | Sprints com portão e papéis |
+| [Roadmap](docs/roadmap.md) | Sprints e resultados |
 | [Referências](docs/referencias.md) | Artigos usados |
 
 ## Stack

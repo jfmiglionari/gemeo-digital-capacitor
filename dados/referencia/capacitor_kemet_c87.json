@@ -1,0 +1,32 @@
+{
+  "fonte": "KEMET, Motor Run Capacitors C87 Series, datasheet F3063_C87, 11/2015",
+  "tecnologia": "filme de polipropileno metalizado, autocura (self-healing)",
+  "tolerancia_capacitancia": 0.05,
+  "classes_operacao": {
+    "C878_classe_A": {"vida_h": 30000, "tensao_VAC": 420},
+    "C878_classe_B": {"vida_h": 10000, "tensao_VAC": 470}
+  },
+  "fator_dissipacao_tan_delta": 0.0020,
+  "fator_dissipacao_condicao": "20 °C, 50 Hz",
+  "temperatura_C": [-25, 85],
+  "tensao_maxima_permitida": "1,10 x tensao nominal",
+  "corrente_maxima_permitida": "1,30 x corrente nominal",
+  "distorcao_harmonica_max": 0.10,
+  "exemplos_proximos_ao_motor_de_referencia": [
+    {"C_uF": 2.5, "V_AC": 450, "codigo": "C878BF34250SA4J"},
+    {"C_uF": 3.0, "V_AC": 450, "codigo": "C878BF34300SA4J"}
+  ],
+  "norma": {
+    "fonte": "IEC 60252-1 ed. 2.1 (2013), secao 3 (classes de operacao)",
+    "classes_vida_h": {"A": 30000, "B": 10000, "C": 3000, "D": 1000},
+    "taxa_falha_max_na_vida": 0.03,
+    "definicao_falha": "curto-circuito, interrupcao, vazamento de liquido, deriva de capacitancia superior a 10% alem dos limites de tolerancia"
+  },
+  "complementar": {
+    "fonte": "WEE Technology, CBB61 Motor Running Capacitors",
+    "tolerancia": [0.05, 0.10],
+    "fator_dissipacao_max": 0.003,
+    "fator_dissipacao_condicao": "1 kHz",
+    "observacao": "capacitor tipico de ventilador; nao informa classe de vida"
+  }
+}

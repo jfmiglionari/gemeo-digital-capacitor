@@ -17,6 +17,10 @@ Responda sempre em **português**, de forma curta e acionável.
 - Depois: mostrar o resultado, interpretar e fazer 1 pergunta de verificação. Só avançar quando ele confirmar.
 - Passos pequenos. Código comentado em português, citando as equações do artigo (ex.: `# Ghial eq. (51)`).
 
+## Metodologia
+
+Sprints com portão (`docs/06-metodologia.md`). Implemente apenas a sprint aberta no `docs/roadmap.md`. A documentação (`docs/`, `dados/referencia/`, README) também é atualizada pela sessão de arquitetura (Claude no app); **sempre rode `git pull` antes de começar e não reescreva documentos sem necessidade**. Critério do gêmeo: alerta em −5%, falha em −15% (ADR 0004).
+
 ## Regras do repositório
 
 - A arquitetura está em `docs/01-arquitetura.md`. Respeitar as camadas e a regra de fronteira: **o gêmeo nunca lê o C verdadeiro da planta** (ADR 0002).
