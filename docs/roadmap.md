@@ -6,7 +6,7 @@ O projeto segue sprints com portão (ver [Metodologia](06-metodologia.md)).
 |---|---|---|---|---|
 | 0 | Temos os dados de entrada verificados? | Revisão de literatura, motor e capacitor de referência, norma, critério de alerta/falha, esta documentação | — | ✔ 2026-09-24 |
 | 1 | A perda de C aparece nas correntes? | Modelo do motor validado + sensibilidade de C = 100% a 85% | V1, V2 | aberta |
-| 2 | Dá para estimar C online, com ruído e perturbações? | Estimador RLS/EKF + camada de saúde | V3, V4, V5 | — |
+| 2 | Uma IA estima C pelas correntes, com ruído e perturbações? | Estimador com machine learning treinado na planta simulada + classificação saudável/alerta/falha ([ADR 0006](adr/0006-estimador-ml.md)) | V3, V4, V5 | — |
 | 3 | Dá para mostrar isso de forma clara? | Painel web interativo | — | — |
 | 4 | Vale para outro motor? | Motor WEG | V6 | — |
 | 5 | Vale na máquina real? | Bancada (futuro) | V7 | — |
@@ -20,6 +20,6 @@ O projeto segue sprints com portão (ver [Metodologia](06-metodologia.md)).
 Cada sprint concluída gera uma atualização pública (LinkedIn), com o resultado e um gráfico:
 - Sprint 0: o problema, a lacuna e o critério.
 - Sprint 1: "uma queda de 5% em C muda X em Y%".
-- Sprint 2: o gêmeo acompanhando C ao longo do tempo.
+- Sprint 2: a IA estimando o capacitor pelas correntes.
 - Sprint 3: vídeo do painel.
 - Sprint 4: o teste na segunda máquina.
