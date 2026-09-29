@@ -31,6 +31,24 @@ Motor de ventilador PSC, 4 polos, 220–240 V, 70 W, 50 Hz, 1400 rpm.
 
 Esses pontos são tratados na etapa 1 e o que for decidido fica registrado aqui.
 
+**Decisões da Sprint 1:**
+
+| # | Observação | Escolha | Por quê |
+|---|---|---|---|
+| 1 | Rsm = Rsa | Mantido como está | 177,0785 = 2 × 88,5392 (Rs): parece que o artigo mediu os dois enrolamentos em paralelo e dividiu igualmente, e não mediu cada um. Não temos como corrigir. Como a planta usa as impedâncias da Tabela III (abaixo), o valor já está embutido nelas. |
+| 2 | IL = Re[Im + Ia] (eq. 53) | IL = \|Im + Ia\| | O Fluke 43B mede o valor eficaz, que é o módulo. Com Re[·], a eq. (54) (Pin = V·IL·cosθ) contaria o cosθ duas vezes. Usamos Pin = Re(V·I*) e pf = cos(ângulo de I). Com pf ≈ 1 a diferença é de 0,4%. |
+| 3 | pf = 1,00 medido | Aceito, com tolerância de ±0,01 | O analisador mostra 2 casas. O modelo dá 0,996, que se arredonda para 1,00. Quer dizer que, no ponto de operação, o capacitor quase compensa a parte indutiva do motor. |
+| 4 | Xc = 1162,6 Ω, mas 1/(2π·50·2,63 µF) = 1210 Ω | Usar 1162,6 Ω (valor do artigo) como Xc0 | É o valor que o artigo usou nas contas. Para variar C, escalamos Xc = Xc0·C0/C. A escolha afeta a sensibilidade em cerca de 4% relativo (por ex., 3,0% contra 3,1%), não a conclusão. |
+
+**Reprodução do artigo (V1):** a cadeia de extração de parâmetros (eqs. 1–33) **não se reproduz** a partir dos dados publicados. A Tabela III tem valores que não seguem das próprias equações:
+- Vab1 foi calculado com 230 V, e não com VNL = 240 V;
+- na eq. (19), Xc entra com sinal negativo (−Xc), e com ≈ 1153 Ω;
+- o ramo de avanço usa Sf = 1/15 (1400 de 1500 rpm), e não 0,0591;
+- Zinsm ≠ Z11 na parte imaginária;
+- Eac, Emc e Z22 não saem das eqs. (28)–(31) e (50).
+
+Seguindo as equações ao pé da letra, IL dá 0,11 A (medido: 0,312 A). Já as **impedâncias finais Z11, Z12, Z21 e Z22 da Tabela III**, aplicadas às eqs. (51)–(55), reproduzem a medição: IL +3,5%, Pin +5,7% e pf 0,996. Por isso a planta usa essas impedâncias ([ADR 0005](adr/0005-planta-calibrada-tabela-iii.md)). Os valores estão em `motor_ghial_2014.json`, em `tabela_III_metodo_proposto`.
+
 ## 2. Segunda máquina: motor comercial WEG (a pesquisar)
 
 Objetivo: testar se o resultado da etapa 1 vale para outro motor.

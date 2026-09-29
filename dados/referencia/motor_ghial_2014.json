@@ -43,6 +43,26 @@
     "pf": 1.00,
     "instrumento": "Fluke 43B"
   },
+  "tabela_III_metodo_proposto": {
+    "fonte": "Ghial et al. (2014), Tabela III, coluna 'Proposed' (impedancias em ohm; forma real + j*imag)",
+    "Rr_ohm": 463.31,
+    "Xs_ohm": 78.38,
+    "Xr_ohm": 78.38,
+    "Vab1_V": 202.02,
+    "Xmm_ohm": 1697.6,
+    "Vab2_V": 476.50,
+    "Xma_ohm": 4004.2,
+    "Zfm_ohm": [194.63, 799.08],
+    "Zbm_ohm": [107.52, 51.96],
+    "Zinsm_ohm": [479.24, 975.43],
+    "Zinsa_ohm": [1156.3, 468.57],
+    "a_CCVR": [1.39, -0.57],
+    "Z11_ohm": [479.24, 929.43],
+    "Z12_ohm": [995.54, -550.09],
+    "Z21_ohm": [-995.54, 550.09],
+    "Z22_ohm": [2041.3, -72.63],
+    "resultado_calculado_pelo_artigo": {"IL_A": 0.31, "Pin_W": 70.65, "pf": 0.99}
+  },
   "observacoes": [
     "Rsm e Rsa aparecem com o mesmo valor no artigo",
     "Eq. (53) define IL como Re[Im + Ia], nao o modulo",

@@ -6,3 +6,4 @@ venv/
 *.egg-info/
 .ipynb_checkpoints/
 *.pdf
+.pytest_cache/
