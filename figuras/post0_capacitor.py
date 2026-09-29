@@ -106,7 +106,7 @@ ax.text(X_R2 + 0.45, (Y_BOB_TOPO + Y_BOB_BASE) / 2, "enrolamento\nauxiliar",
         ha="left", va="center", fontsize=18, color=PRETO, linespacing=1.2)
 
 # legenda do papel do capacitor
-ax.text((X_FONTE + X_R2) / 2 + 0.4, 2.55, "o capacitor atrasa a corrente\ndo auxiliar → o eixo gira",
+ax.text((X_FONTE + X_R2) / 2 + 0.4, 2.55, "o capacitor adianta a corrente\ndo auxiliar → o eixo gira",
         ha="center", va="center", fontsize=19, color=PRETO, linespacing=1.3)
 
 # ---------- DIREITA: a vida do capacitor ----------
