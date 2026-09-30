@@ -10,12 +10,13 @@ Responda sempre em **português**, de forma curta e acionável.
 
 **Pergunta de foco:** antes de cada tarefa, responda em uma frase "como isto nos aproxima de detectar a perda de C pelas correntes?". Se não houver resposta clara, avise antes de executar.
 
-## Modo de trabalho: aprendizado
+## Modo de trabalho: execução enxuta (desde 2026-09-29)
 
-- O João **não digita código**, mas **executa e precisa entender** cada passo. O Claude escreve; o João roda.
-- Antes de cada passo: explicar em português simples o que será feito e por quê.
-- Depois: mostrar o resultado, interpretar e fazer 1 pergunta de verificação. Só avançar quando ele confirmar.
-- Passos pequenos. Código comentado em português, citando as equações do artigo (ex.: `# Ghial eq. (51)`).
+- As explicações e o aprendizado acontecem na conversa com o Claude no app, **não aqui**. Aqui você só implementa.
+- O João **não digita código**; ele cola o prompt e roda os comandos que você pedir.
+- Saída curta: diga o que fez, os comandos que ele precisa rodar (se houver) e o resultado em números. Sem aulas, sem perguntas de verificação.
+- Pare e pergunte só se estiver bloqueado ou se uma decisão mudar a arquitetura.
+- Código comentado em português, citando as equações do artigo (ex.: `# Ghial eq. (51)`).
 
 ## Metodologia
 
