@@ -1,6 +1,6 @@
 # ADR 0005: Planta calibrada com as impedâncias da Tabela III do Ghial
 
-**Status:** proposto (2026-09-28), para a revisão da Sprint 1
+**Status:** aceito na revisão da Sprint 1 (2026-10-05)
 
 ## Contexto
 A V1 pede que o modelo reproduza o motor 1 do Ghial (2014). Refazer a extração de parâmetros do artigo (eqs. 1–33) a partir dos ensaios publicados dá IL = 0,11 A, contra 0,312 A medidos. A Tabela III do artigo tem valores intermediários que não seguem das próprias equações (detalhes em [Fontes de dados](../02-fontes-de-dados.md)). Já as impedâncias finais Z11, Z12, Z21 e Z22 da tabela, nas eqs. (51)–(55), reproduzem a medição com erro de 3–6%.

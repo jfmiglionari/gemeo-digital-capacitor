@@ -17,8 +17,8 @@ Se uma entrada não for encontrada, a rota é redefinida em conjunto e registrad
 | Sprint | Pergunta | Critério de pronto | Validações | Status |
 |---|---|---|---|---|
 | 0 — Fundamentos | Temos todos os dados de entrada com fonte verificada? | Lacuna confirmada; motor de referência; datasheet de capacitor; norma; critério de alerta e falha decidido | — | ✔ 2026-09-24 |
-| 1 — Modelo e sensibilidade | A perda de C aparece nas correntes? | Modelo reproduz o artigo de referência; sensibilidade de C = 100% a 85%; resultado em uma frase | V1, V2 | aberta |
-| 2 — Estimador com ML | Uma IA estima C pelas correntes, com ruído e perturbações? | Modelo de ML treinado + classificação saudável/alerta/falha; alerta em −5% sem alarmes falsos | V3, V4, V5 | — |
+| 1 — Modelo e sensibilidade | A perda de C aparece nas correntes? | Modelo reproduz o artigo de referência; sensibilidade de C = 100% a 85%; resultado em uma frase | V1, V2 | ✔ 2026-10-05 |
+| 2 — Estimador com ML | Uma IA estima C pelas correntes, com ruído e perturbações? | Modelo de ML treinado + classificação saudável/alerta/falha; alerta em −5% sem alarmes falsos | V3, V4, V5 | aberta |
 | 3 — Painel | Dá para mostrar isso de forma clara? | Painel web interativo | — | — |
 | 4 — Segunda máquina | Vale para outro motor? | Mesmas conclusões com um motor WEG | V6 | — |
 | 5 — Bancada (futuro) | Vale na máquina real? | Erro de C dentro do obtido em V4 | V7 | — |
