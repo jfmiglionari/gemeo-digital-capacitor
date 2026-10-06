@@ -1,0 +1,46 @@
+{
+  "modelo_completo": {
+    "erro_medio_abs_pp": 0.6995865226365192,
+    "acuracia": 0.927,
+    "alarme_falso": 0.04659498207885305,
+    "matriz_confusao (linhas=real, colunas=estimado; ordem falha/alerta/saudável)": [
+      [
+        217,
+        21,
+        0
+      ],
+      [
+        13,
+        444,
+        26
+      ],
+      [
+        0,
+        13,
+        266
+      ]
+    ]
+  },
+  "linha_de_base_so_Im": {
+    "erro_medio_abs_pp": 4.866757849512116,
+    "acuracia": 0.499,
+    "alarme_falso": 0.5698924731182796,
+    "matriz_confusao (linhas=real, colunas=estimado; ordem falha/alerta/saudável)": [
+      [
+        68,
+        145,
+        25
+      ],
+      [
+        88,
+        311,
+        84
+      ],
+      [
+        5,
+        154,
+        120
+      ]
+    ]
+  }
+}

@@ -72,18 +72,28 @@ class MotorPSC:
         Xc = self.Xc0_ohm * self.C0_F / C_F
         return Rc - 1j * Xc
 
-    def resolver(self, C_F=None, V=None, Rc_ohm=None) -> Resultado:
-        """Calcula correntes e desempenho para um capacitor C (padrão: nominal)."""
+    def resolver(self, C_F=None, V=None, Rc_ohm=None, fator_resistencia=1.0) -> Resultado:
+        """Calcula correntes e desempenho para um capacitor C (padrão: nominal).
+
+        fator_resistencia (padrão 1.0) representa o cobre aquecido: multiplica a
+        parte real de Z11 e a de Z22 sem o capacitor. Aproximação: cobre com
+        ≈ +0,39% de resistência por °C, fator = 1 + 0,0039·(T − T_ref). Toda a
+        parte real é tratada como resistência de cobre (ignora perdas no ferro
+        e a resistência do rotor refletida, que não variam com a mesma lei).
+        """
         C = self.C0_F if C_F is None else C_F
         V = self.V_nominal if V is None else V
         Vm = Va = V  # enrolamentos em paralelo na mesma rede
 
-        Z22 = self.Z22_sem_capacitor + self.Zc(C, Rc_ohm)  # Ghial eq. (50)
-        det = self.Z11 * Z22 - self.Z12 * self.Z21
+        k = fator_resistencia
+        Z11 = complex(self.Z11.real * k, self.Z11.imag)
+        Z22s = complex(self.Z22_sem_capacitor.real * k, self.Z22_sem_capacitor.imag)
+        Z22 = Z22s + self.Zc(C, Rc_ohm)  # Ghial eq. (50)
+        det = Z11 * Z22 - self.Z12 * self.Z21
 
         # Regra de Cramer nas eqs. (45)–(46); com Vm = Va viram as eqs. (51)–(52)
         Im = (Vm * Z22 - Va * self.Z12) / det
-        Ia = (Va * self.Z11 - Vm * self.Z21) / det
+        Ia = (Va * Z11 - Vm * self.Z21) / det
 
         I_linha = Im + Ia
         # Escolha documentada em docs/02-fontes-de-dados.md: IL = |Im + Ia|
