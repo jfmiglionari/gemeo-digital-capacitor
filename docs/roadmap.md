@@ -16,7 +16,10 @@ O projeto segue sprints com portão (ver [Metodologia](06-metodologia.md)).
 - Critério do gêmeo: alerta em −5%, falha em −15% ([ADR 0004](adr/0004-criterio-alerta-falha.md)), com base em Zhao 2021 e IEC 60252-1.
 - A tolerância de ±5% dos capacitores de motor obriga o gêmeo a aprender C0 no comissionamento.
 
-## Marcos para comunicação
+## Resultados da Sprint 1 (aguarda revisão do portão)
+- Uma queda de 5% em C muda |Im| (corrente do enrolamento principal) em −4,15%; |Ia| −2,11%, IL −2,81%, defasagem Ia-Im +2,83°. Em −15%: |Im| −12,5%, defasagem +9,9°.
+- Simplificação: tensão e escorregamento fixos. Dados em `resultados/etapa1_sensibilidade.csv` e `.png`.
+
 Cada sprint concluída gera uma atualização pública (LinkedIn), com o resultado e um gráfico:
 - Sprint 0: o problema, a lacuna e o critério.
 - Sprint 1: "uma queda de 5% em C muda X em Y%".
